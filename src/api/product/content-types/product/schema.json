@@ -79,6 +79,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::weigth.weigth"
+    },
+    "prices": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product.prices",
+      "required": true
     }
   }
 }

@@ -960,6 +960,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'oneToMany',
       'api::weigth.weigth'
     >;
+    prices: Attribute.Component<'product.prices', true> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -30,8 +30,8 @@ module.exports = ({ env }) => ({
                 },
             },
             settings: {
-            defaultFrom: 'orders@select-beef.com',
-            defaultReplyTo: 'orders@select-beef.com',
+            defaultFrom: 'orders.selectabeef@gmail.com',
+            defaultReplyTo: 'orders.selectabeef@gmail.com',
             },
         },
     },

@@ -17,6 +17,20 @@ export interface OrderOrderItems extends Schema.Component {
   };
 }
 
+export interface ProductPrices extends Schema.Component {
+  collectionName: 'components_product_prices';
+  info: {
+    displayName: 'prices';
+    icon: 'priceTag';
+    description: '';
+  };
+  attributes: {
+    price: Attribute.Decimal & Attribute.Required;
+    weigth: Attribute.String & Attribute.Required;
+    discount_price: Attribute.Decimal;
+  };
+}
+
 export interface WebsiteInformationSlides extends Schema.Component {
   collectionName: 'components_website_information_slides';
   info: {
@@ -34,6 +48,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'order.order-items': OrderOrderItems;
+      'product.prices': ProductPrices;
       'website-information.slides': WebsiteInformationSlides;
     }
   }
