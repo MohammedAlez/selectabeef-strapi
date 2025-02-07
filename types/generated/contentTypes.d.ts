@@ -955,11 +955,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'oneToOne',
       'api::category.category'
     >;
-    weigths: Attribute.Relation<
-      'api::product.product',
-      'oneToMany',
-      'api::weigth.weigth'
-    >;
     prices: Attribute.Component<'product.prices', true> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -972,37 +967,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::product.product',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiWeigthWeigth extends Schema.CollectionType {
-  collectionName: 'weigths';
-  info: {
-    singularName: 'weigth';
-    pluralName: 'weigths';
-    displayName: 'weigth';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    value: Attribute.String & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::weigth.weigth',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::weigth.weigth',
       'oneToOne',
       'admin::user'
     > &
@@ -1033,7 +997,6 @@ declare module '@strapi/types' {
       'api::home-page-slide.home-page-slide': ApiHomePageSlideHomePageSlide;
       'api::order.order': ApiOrderOrder;
       'api::product.product': ApiProductProduct;
-      'api::weigth.weigth': ApiWeigthWeigth;
     }
   }
 }
